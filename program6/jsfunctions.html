@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Js functions</title>
+<style>
+body{
+text-align:center;
+color:blue;
+margin:35px;
+font-weight:bold;
+}
+</style>
+</head>
+<body>
+<h2><u>STRING METHOD</u></h2>
+<p>javascript string method</p>
+<script type="text/javascript">
+var name="i am liyana";
+document.write(name+"<br>");
+document.write("length of string is:"+name.length+"<br>");
+document.write("index of first occurence of 'a' in string is:"+name.indexOf("a")+"<br>");
+document.write("index of last occurence of 'a' in string is:"+name.lastIndexOf("a")+"<br>");
+document.write("index of am in string:"+name.search("am")+"<br>");
+document.write("index of 0 to 3 print using slice:"+name.slice(0,4)+"<br>");
+document.write("to get substring of string using substring:"+name.substring(0,8)+"<br>");
+document.write("to get substring of string using substr:"+name.substr(0,5)+"<br>");
+document.write("string to uppercase:"+name.toUpperCase()+"<br>");
+document.write("replace liyana to lubna in string:"+name.replace("liyana","lubna")+"<br>");
+document.write("use trim:"+name.trim()+"<br>");
+document.write("new string that have character 5 on string:"+name.charAt(5)+"<br>");
+document.write("print numeric ASCII value of charcter 5 on string:"+name.charCodeAt(5)+"<br>");
+</script>
+
+
+
+
+<h2><u>MATH OBJECT</u></h2>
+<p>math object is a build in object,contains basic mathematical functions and constants</p>
+<script>
+
+document.write( "Value of PI in radian:"+Math.PI+"<br>");
+document.write( "PI in degree:"+(Math.PI*180/Math.PI)+"<br>");
+document.write("Value of E:"+Math.E+"<br>");
+document.write("Sign of -3,print 1 if it is positive print -1 if it is negative or print 0 if it is zero:"+Math.sign(-3)+"<br>");
+document.write("Sqaureroot of a number 16 is:"+Math.sqrt(16)+"<br>");
+document.write("The 2nd power of 8 is:"+Math.pow(8,2)+"<br>");
+document.write("Round the value 6.7 is:"+Math.round(6.7)+"<br>");
+document.write("Round the value 4.6 is:"+Math.round(4.6)+"<br>");
+document.write("Ceil the value 4.4 is:"+Math.ceil(4.4)+"<br>");
+document.write("Ceil the value 4.6 is:"+Math.ceil(4.6)+"<br>");
+document.write( "floor value of the value 4.4 is:"+Math.floor(4.4)+"<br>");
+</script>
+</body>
+</html>

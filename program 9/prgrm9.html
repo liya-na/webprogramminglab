@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Mouse Event</title>
+</head>
+<body style="text-align:center;">
+<h2>Mouse Handling</h2>
+<img id="img-tag"src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Flower_stock_photo.jpg/1280px-Flower_stock_photo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" onmouseover="changeImg()" onmouseout="setOld()" width="220px" height="230px" alt="image1">
+<p id="msg">Move the mouse over the image</p>
+<script>
+function changeImg(){
+document.getElementById("img-tag").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf_g6fDbhWH7p0SSdW6WVWFSZsYjipE--a7kLuUV5IazVbtaBsIXMriyo&s=10";
+document.getElementById("msg").innerHTML="New image displayed!";
+}
+function setOld(){
+document.getElementById("img-tag").src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Flower_stock_photo.jpg/1280px-Flower_stock_photo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail";
+document.getElementById("msg").innerHTML="Move the mouse over the image";
+}
+</script>
+</body>
+</html>

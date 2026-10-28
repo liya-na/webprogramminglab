@@ -1,0 +1,18 @@
+.external-box {
+font-family:"times new roman";
+background-color:#536df5;
+width:800px;
+height:370px;
+padding:15px;
+}
+.external-box p{
+color:black;
+font-size:14px;
+}
+.external-box img {
+width:200px;
+height:190px;
+}
+#heading{
+color:red;
+}

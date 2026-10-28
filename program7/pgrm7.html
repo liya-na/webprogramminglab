@@ -1,0 +1,93 @@
+<html>
+<head>
+<style>
+body{
+  font-family:sans-serif;
+  text-align:center;
+  }
+table{
+  margin:20px auto;
+  border-collapse:collapse;
+  }
+th,td{
+  border:1px solid #ddd;
+  padding:10px;
+  }
+th{
+  background-color:#f2f2f2;
+  }
+td{
+  cursor:pointer;
+  }
+td.sunday,td.second-saturday{
+  color:red;
+  }
+td.second-saturday{
+  font-weight:bold;
+  }
+</style>
+</head>
+<body>
+<h2>Calender generator</h2>
+<label for="year">Enter year:</label>
+<input type="number" id="year" placeholder="Enter year" min="1">
+<label for="month">Enter month:</label>
+<input type="number" id="month" placeholder="Enter month" min="1" max="12">
+<button onclick="generateCalender()">Generate calender</button>
+<div id="calender-container"></div>
+<script>
+function generateCalender(){
+const year=document.getElementById('year').value;
+const month=document.getElementById('month').value;
+const calenderContainer=document.getElementById('calender-container');
+if(!year||!month){
+alert('please enter both year and month.');
+return;
+}
+if(year<1){
+alert('please enter a valid year');
+return;
+}
+if(month<1||month>12){
+alert('please enter a month between 1 and 12.');
+return;
+}
+const daysInMonth=new Date(year,month,0).getDate();
+const firstDay=new Date(year,month-1,1).getDay();
+let calenderHTML ='<table>';
+calenderHTML+=`<tr>
+<th>sun</th>
+<th>mon</th>
+<th>tue</th>
+<th>wed</th>
+<th>thu</th>
+<th>fri</th>
+<th>sat</th>
+</tr>`;
+let daycounter=1;
+for(let i=0;i<6;i++){
+calenderHTML +='<tr>';
+for(let j=0;j<7;j++){
+if(i===0 && j<firstDay){
+calenderHTML+='<td></td>';
+}
+else if(daycounter<= daysInMonth){
+const currentDate=new Date(year,month-1,daycounter);
+const isSunday=currentDate.getDay()===0;
+const isSecondSaturday=currentDate.getDay()===6 && Math.ceil(daycounter/7)==2;
+let className=isSunday?'sunday':(isSecondSaturday?'second-saturday':'');
+calenderHTML +=`<td class="${className}"onclick="alert('you clicked on ${currentDate.toDateString()}')">${daycounter}</td>`;
+daycounter++;
+}
+else{
+calenderHTML +='<td></td>';
+}
+}
+calenderHTML +='</tr>';
+}
+calenderHTML +='</table>';
+calenderContainer.innerHTML=calenderHTML;
+}
+</script>
+</body></html>
+
